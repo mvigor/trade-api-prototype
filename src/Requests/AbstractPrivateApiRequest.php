@@ -11,7 +11,7 @@ abstract class AbstractPrivateApiRequest extends AbstractRequest implements Requ
     protected $id;
     protected $key;
 
-    public function setAuthData($id, $key){
+    public function setAuthData($id, $key): RequestInterface{
         $this->id = $id;
         $this->key = $key;
         return $this;
@@ -19,7 +19,9 @@ abstract class AbstractPrivateApiRequest extends AbstractRequest implements Requ
 
     public function getSerializedParameters(): String {
         $this->params = array_merge( $this->params ?? [],
-            [ 'ts' => round(microtime(true) * 1000) ]);
+            [
+                'ts' => round(microtime(true) * 1000)
+            ]);
         return json_encode( $this->params );
     }
 
