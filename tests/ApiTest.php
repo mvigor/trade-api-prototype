@@ -10,7 +10,7 @@ class ApiTest extends TestCase
     const ID = "asdkljfhsdakfjhsdalkjfhsadlkfaas";
     const KEY = "mnbvcxnvbxczjvjhsdagfsdakjfhsdafhsdafkas";
     protected $apiClient;
-    protected $stubHttpClient;
+
     protected function setUp(): void
     {
         $this->apiClient = new ApiClient(
