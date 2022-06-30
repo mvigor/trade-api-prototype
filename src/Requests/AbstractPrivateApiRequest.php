@@ -11,7 +11,7 @@ abstract class AbstractPrivateApiRequest extends AbstractRequest implements Requ
     protected $id;
     protected $key;
 
-    public function setAuthData($id, $key): RequestInterface{
+    public function setAuthData($id, $key): AbstractPrivateApiRequest{
         $this->id = $id;
         $this->key = $key;
         return $this;
