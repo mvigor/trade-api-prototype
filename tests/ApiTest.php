@@ -1,7 +1,5 @@
 <?php
 
-require "./vendor/autoload.php";
-
 use Mvigor\TradeApi\ApiClient;
 use PHPUnit\Framework\TestCase;
 
