@@ -11,15 +11,14 @@ use Mvigor\TradeApi\Response;
 abstract class AbstractRequest implements RequestInterface
 {
     protected array $params = [];
-    const API_URL = "https://payeer.com/api/trade";
 
     abstract function getHeader(): array;
 
-    public function __construct(protected ClientInterface $httClient){
+    public function __construct(protected ClientInterface $httClient, private string $apiUrl ){
     }
 
     public function getFullPath(): string {
-        return self::API_URL . $this->getApiPath();
+        return $this->apiUrl . $this->getApiPath();
     }
 
     public function execute(): Response {

@@ -7,13 +7,15 @@ class ApiTest extends TestCase
 {
     const ID = "asdkljfhsdakfjhsdalkjfhsadlkfaas";
     const KEY = "mnbvcxnvbxczjvjhsdagfsdakjfhsdafhsdafkas";
+    const API = "https://payeer.com/api/trade";
     protected $apiClient;
 
     protected function setUp(): void
     {
         $this->apiClient = new ApiClient(
             self::ID,
-            self::KEY
+            self::KEY,
+            self::API
         );
 
         parent::setUp();
